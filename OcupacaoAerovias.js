@@ -24,7 +24,7 @@ export default class OcupacaoAerovia {
   }
 
   //retorna todas as altitudes livres
-  static altitudesLivres(aeroviaIdParametro, dataParametro, slotParametro) {
+  altitudesLivres(aeroviaIdParametro, dataParametro, slotParametro) {
     let altitudes = [
       "25.000",
       "26.000",

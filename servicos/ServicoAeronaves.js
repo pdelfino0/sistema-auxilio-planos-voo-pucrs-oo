@@ -15,13 +15,16 @@ export default class ServicoAeronaves {
 
   //retorna a aeronave com o prefixo informado
   recupera(prefixo) {
+    if (!this.#aeronaves.find((aeronave) => aeronave.prefixo === prefixo)) {
+      throw new Error("Aeronave não encontrada. Tente novamente");
+    }
     return this.#aeronaves.find(
       (aeronave) => aeronave.prefixo === aeronave.prefixo
     );
   }
 
   //instancia as aeronaves de acordo com o tipo
-  adicionaAeronavesCarga(arquivo) {
+  async adicionaAeronavesCarga(arquivo) {
     let linha;
     let dados = [];
     let buf = new nReadlines(arquivo);
@@ -34,7 +37,7 @@ export default class ServicoAeronaves {
     }
   }
   //instancia as aeronaves de acordo com o tipo
-  adicionaAeronavesPassageiros(arquivo) {
+  async adicionaAeronavesPassageiros(arquivo) {
     let linha;
     let dados = [];
     let buf = new nReadlines(arquivo);
@@ -54,7 +57,7 @@ export default class ServicoAeronaves {
   }
 
   //instancia as aeronaves de acordo com o tipo
-  adicionaAeronavesParticulares(arquivo) {
+  async adicionaAeronavesParticulares(arquivo) {
     let linha;
     let dados = [];
     let buf = new nReadlines(arquivo);
@@ -65,6 +68,10 @@ export default class ServicoAeronaves {
         new AeronaveParticular(dados[0], dados[1], dados[2], dados[3], dados[4])
       );
     }
+  }
+
+  adiciona(aeronave) {
+    this.#aeronaves.push(aeronave);
   }
 
   toString() {

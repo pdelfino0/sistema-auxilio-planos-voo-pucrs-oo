@@ -5,7 +5,27 @@ import Piloto from "../Piloto.js";
 export default class ServicoPiloto {
   #pilotos = [];
 
-  constructor(arquivo) {
+  // constructor(arquivo) {
+  //   let linha;
+  //   let dados = [];
+  //   let buf = new nReadlines(arquivo);
+  //   while ((linha = buf.next())) {
+  //     dados = linha.toString("utf8").split(",");
+  //     let bool;
+  //     if (Number(dados[2]) === 1) {
+  //       bool = true;
+  //     } else {
+  //       bool = false;
+  //     }
+  //     this.#pilotos.push(new Piloto(dados[0], dados[1], bool));
+  //   }
+  // }
+
+  constructor(){
+
+  }
+
+  async carregaPilotos(arquivo) {
     let linha;
     let dados = [];
     let buf = new nReadlines(arquivo);
@@ -21,6 +41,10 @@ export default class ServicoPiloto {
     }
   }
 
+  adiciona(piloto) {
+    validate(piloto, Piloto);
+    this.#pilotos.push(piloto);
+  }
   //retorna todos os pilotos
   todos() {
     return this.#pilotos;
@@ -29,6 +53,9 @@ export default class ServicoPiloto {
   //retorna o piloto com a matrícula informada
   recuperarPiloto(matriculaPiloto) {
     validate(matriculaPiloto, "String");
+    if (!this.#pilotos.find((piloto) => piloto.matricula === matriculaPiloto)) {
+      throw new Error("Piloto não encontrado. Tente novamente\n");
+    }
     return this.#pilotos.find((piloto) => piloto.matricula === matriculaPiloto);
   }
 

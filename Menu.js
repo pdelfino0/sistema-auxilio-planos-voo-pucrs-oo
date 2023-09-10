@@ -12,21 +12,27 @@ import AeronaveCarga from "./AeronaveCarga.js";
 import AeronavePassageiros from "./AeronavesPassageiros.js";
 
 // Inicializando serviços e classes necessários
-const sAerovia = new ServicoAerovias("./dados/aerovias.csv");
+const sAerovia = new ServicoAerovias
+await sAerovia.carregaAerovias("./dados/aerovias.csv")
+
+
+
 const sAeronaves = new ServicoAeronaves();
 // Adicionando aeronaves particulares, de carga e de passageiros
-sAeronaves.adicionaAeronavesParticulares(
+await sAeronaves.adicionaAeronavesParticulares(
   "./dados/dados_aeronaves_particulares.csv"
 );
-sAeronaves.adicionaAeronavesCarga("./dados/dados_aeronaves_de_carga.csv");
-sAeronaves.adicionaAeronavesPassageiros(
+await sAeronaves.adicionaAeronavesCarga("./dados/dados_aeronaves_de_carga.csv");
+await sAeronaves.adicionaAeronavesPassageiros(
   "./dados/dados_aeronaves_de_passageiros.csv"
 );
 
 // Inicializando serviços e classes relacionadas a planos de voo
 const sPlanoDeVoo = new ServicoPlanoDeVoo();
 const oAerovia = new OcupacaoAerovia();
-const sPiloto = new ServicoPiloto("./dados/pilotos.csv");
+
+const sPiloto = new ServicoPiloto
+await sPiloto.carregaPilotos("./dados/pilotos.csv")
 
 // Loop principal do programa
 let encerrando = false;
