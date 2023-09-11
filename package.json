@@ -5,6 +5,7 @@
   "description": "",
   "main": "main.js",
   "scripts": {
+    "start": "node Menu.js",
     "test": "node --experimental-vm-modules node_modules/jest/bin/jest",
     "test:watch": "node --experimental-vm-modules node_modules/jest/bin/jest --watch",
     "test:coverage": "node --experimental-vm-modules node_modules/jest/bin/jest --coverage"

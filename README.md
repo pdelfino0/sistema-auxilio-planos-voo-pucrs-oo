@@ -32,3 +32,37 @@ To get started with the Flight Plan Assistance System, follow these steps:
 
 Once the system is running, you can interact with it through the text-based menu. Follow the on-screen prompts to create and manage flight plans.
 
+## Em Português(Brasil)
+
+# Sistema de Assistência de Plano de Voo (Projeto Acadêmico da PUCRS)
+
+Bem-vindo ao Sistema de Assistência de Plano de Voo! Este projeto faz parte do curso de Análise e Desenvolvimento de Sistemas da PUCRS (Pontifícia Universidade Católica do Rio Grande do Sul). Nosso principal objetivo é criar um sistema baseado em JavaScript que auxilia pilotos na criação de planos de voo. Este projeto está dividido em duas fases e se baseia nos conceitos orientados a objetos aprendidos durante o curso.
+
+⚠️ **Nota Importante:** O Sistema de Assistência de Plano de Voo é um projeto universitário desenvolvido para fins educacionais. Não é destinado ao planejamento ou navegação de voos no mundo real. Por favor, não o utilize para agendar planos de voo reais.
+
+## Índice
+
+- [Fase 1 - Modelagem e Implementação das Classes Principais](#fase-1---modelagem-e-implementação-das-classes-principais)
+- [Fase 2 - Implementação do Sistema Completo](#fase-2---implementação-do-sistema-completo)
+- [Começando](#começando)
+- [Uso](#uso)
+
+## Fase 1 - Modelagem e Implementação das Classes Principais
+
+Nesta fase inicial, desenvolvemos classes essenciais, incluindo `Piloto`, `Serviço de Pilotos`, uma hierarquia de classes de aeronaves, `Serviço de Aeronaves`, `Aerovia` e `Serviço de Aerovias`. Também criamos um diagrama de classes UML para representar a estrutura do sistema.
+
+## Fase 2 - Implementação do Sistema Completo
+
+A segunda fase concentra-se na conclusão do sistema, incluindo uma interface de modo texto com um menu que oferece todas as funcionalidades necessárias. Utilizaremos testes de software para validar as regras de negócios do sistema. A modelagem seguirá o paradigma Orientado a Objetos.
+
+## Começando
+
+Para começar com o Sistema de Assistência de Plano de Voo, siga estas etapas:
+
+1. Clone este repositório em sua máquina local.
+2. Instale quaisquer dependências necessárias usando `npm install`.
+3. Execute a aplicação usando `npm start`.
+
+## Uso
+
+Depois que o sistema estiver em execução, você poderá interagir com ele por meio do menu baseado em texto. Siga as instruções na tela para criar e gerenciar planos de voo.
